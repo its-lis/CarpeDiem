@@ -1,0 +1,36 @@
+server:
+  port: 1201
+
+spring:
+  datasource: #mysql\u6570\u636E\u6E90
+    #    url: jdbc:mysql://192.168.3.9:3306/spring-boot?serverTimezone=GMT%2B8
+    url: jdbc:mysql://6y067e8276.goho.co:57986/spring-boot?serverTimezone=GMT%2B8
+    username: root
+    password: CarpeDiem
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    cache: false #\u7981\u7528\u6A21\u677F\u7F13\u5B58\uFF0C\u53EF\u4EE5\u5B9E\u65F6\u89C2\u5BDFhtml\u53D8\u5316
+  servlet:
+    multipart:
+      enabled: true #\u662F\u5426\u542F\u7528http\u4E0A\u4F20\u5904\u7406
+      max-file-size: 1024MB #\u8BBE\u7F6E\u5355\u4E2A\u6587\u4EF6\u6700\u5927\u957F\u5EA6
+      max-request-size: 10240MB #\u6700\u5927\u8BF7\u6C42\u6587\u4EF6\u7684\u5927\u5C0F
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml #XML\u6587\u4EF6\u6620\u5C04\u8DEF\u5F84
+  type-aliases-package: com.autumn.weather.entity #\u5B9E\u4F53\u7C7B\u6240\u5728\u7684\u4F4D\u7F6E
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #\u7528\u4E8E\u63A7\u5236\u53F0\u6253\u5370sql\u8BED\u53E5
+    map-underscore-to-camel-case: true
+
+# PageHelper\u5206\u9875\u63D2\u4EF6
+pagehelper:
+  #\u6307\u5B9A\u5206\u9875\u63D2\u4EF6\u4F7F\u7528\u54EA\u79CD\u65B9\u8A00\uFF0C\u652F\u6301\uFF1Aoracle,mysql,mariadb,sqlite,hsqldb,postgresql,db2,informix,h2,derby\u3002\u3002\u3002
+  helperDialect: mysql
+  # pageNum<=0 \u65F6\u4F1A\u67E5\u7B2C\u4E00\u9875\uFF0C pageNum>pages\uFF08\u8D85\u8FC7\u603B\u6570\u65F6\uFF09\uFF0C\u4F1A\u67E5\u6700\u540E\u4E00\u9875
+  reasonable: true
+  # \u652F\u6301\u901A\u8FC7 Mapper \u63A5\u53E3\u53C2\u6570\u6765\u4F20\u9012\u5206\u9875\u53C2\u6570\uFF0C\u9ED8\u8BA4\u503Cfalse
+  supportMethodsArguments: true
+  # \u4E3A\u4E86\u652F\u6301startPage(Object params)\u65B9\u6CD5\uFF0C\u589E\u52A0\u4E86\u8BE5\u53C2\u6570\u6765\u914D\u7F6E\u53C2\u6570\u6620\u5C04\uFF0C\u7528\u4E8E\u4ECE\u5BF9\u8C61\u4E2D\u6839\u636E\u5C5E\u6027\u540D\u53D6\u503C
+  params: count=countSql
+
