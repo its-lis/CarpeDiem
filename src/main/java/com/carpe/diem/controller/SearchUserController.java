@@ -5,8 +5,7 @@ import com.carpe.diem.service.SearchUserService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -16,10 +15,8 @@ public class SearchUserController {
     private SearchUserService service;
 
     @ResponseBody
-    @PostMapping("/searchUser/{id}/{a}")
-    public PageInfo searchUser(@PathVariable Integer id,
-                               @PathVariable Integer a) {
-        System.out.println("id:"+ id+"a:" +a);
+    @GetMapping("/searchUser")
+    public PageInfo searchUser() {
         return service.searchUser();
     }
 }

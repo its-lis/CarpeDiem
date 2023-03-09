@@ -4,7 +4,7 @@ server:
 spring:
   datasource: #mysql\u6570\u636E\u6E90
     #    url: jdbc:mysql://192.168.3.9:3306/spring-boot?serverTimezone=GMT%2B8
-    url: jdbc:mysql://6y067e8276.goho.co:57986/spring-boot?serverTimezone=GMT%2B8
+    url: jdbc:mysql://12.tcp.cpolar.top:11473/spring-boot?serverTimezone=GMT%2B8
     username: root
     password: CarpeDiem
     driver-class-name: com.mysql.cj.jdbc.Driver
