@@ -19,4 +19,9 @@ public class SearchUserController {
     public PageInfo searchUser() {
         return service.searchUser();
     }
+
+    @GetMapping("/test")
+    public String test() {
+        return "test";
+    }
 }
