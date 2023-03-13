@@ -20,6 +20,6 @@ public class SearchUserController {
 
     @GetMapping("/test")
     public String test() {
-        return "jenkins—test36";
+        return "jenkins—test38";
     }
 }
